@@ -29,11 +29,17 @@ class ProductNew extends Component {
                     Add new product
                 </div>
                 <div className="new-item-input">
+                    <div className="new-item-input-label">
+                        Name:
+                    </div>
                     <input type="text"
                            value={productName}
                            onChange={this.updateProductName}/>
                 </div>
                 <div className="new-item-input">
+                    <div className="new-item-input-label">
+                        Unit on stock:
+                    </div>
                     <input type="number"
                            value={unitsOnStock}
                            onChange={this.updateUnitsOnStock}/>

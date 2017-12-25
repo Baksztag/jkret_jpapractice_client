@@ -13,10 +13,10 @@ class ProductDetails extends Component {
                     Product details
                 </div>
                 <div className="name">
-                    {P.name(product)}
+                    Name: {P.name(product)}
                 </div>
                 <div className="stock">
-                    {P.unitsOnStock(product)}
+                    Units on stock: {P.unitsOnStock(product)}
                 </div>
             </div>
         );

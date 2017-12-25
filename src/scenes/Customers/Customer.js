@@ -5,8 +5,8 @@ import '../../style/index.css';
 /**
  * Created by jkret on 25/12/2017.
  */
-const Customer = ({item, onItemClick}) => (
-    <div className="item"
+const Customer = ({item, onItemClick, activeItemId}) => (
+    <div className={`${C.id(item) === activeItemId ? "item-active" : "item"}`}
          onClick={() => onItemClick(C.id(item))}>
         <div className="item-name">
             {C.name(item)}

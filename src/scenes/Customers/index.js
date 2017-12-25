@@ -77,6 +77,7 @@ class Customers extends Component {
                 </div>
                 <List ItemComponent={Customer}
                       items={customers}
+                      activeItemId={C.id(customerDetails)}
                       onItemClick={this.onItemClick}
                       loading={loading}/>
             </div>

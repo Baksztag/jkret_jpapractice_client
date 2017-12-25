@@ -45,6 +45,19 @@ body {
   border-radius: 4px;
 }
 
+.jpa-practice-client .list .item-active {
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: darkred;
+  color: burlywood;
+}
+
+.jpa-practice-client .list .item:hover {
+  color: darkred;
+  cursor: pointer;
+}
+
 .jpa-practice-client .list .item .item-name {
 
 }

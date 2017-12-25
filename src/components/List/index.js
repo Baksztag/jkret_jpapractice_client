@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 class List extends Component {
     render() {
-        const {loading, items, ItemComponent, onItemClick} = this.props;
+        const {loading, items, ItemComponent, onItemClick, activeItemId} = this.props;
         console.log(items)
 
         return (
@@ -17,6 +17,7 @@ class List extends Component {
                     {items.map((item, index) => (
                         <ItemComponent key={index}
                                        onItemClick={onItemClick}
+                                       activeItemId={activeItemId}
                                        item={item}/>
                     ))}
                 </div>
@@ -31,8 +32,11 @@ List.propTypes = {
     ]),
     items: PropTypes.array.isRequired,
     loading: PropTypes.bool.isRequired,
-    onItemClick: PropTypes.func.isRequired
+    onItemClick: PropTypes.func.isRequired,
+    activeItemId: PropTypes.number
 };
-List.defaultProps = {};
+List.defaultProps = {
+    activeItemId: null
+};
 
 export default List;

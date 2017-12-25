@@ -89,6 +89,7 @@ class Products extends Component {
                 </div>
                 <List ItemComponent={Product}
                       onItemClick={this.onItemClick}
+                      activeItemId={P.id(productDetails)}
                       items={products}
                       loading={loading}/>
             </div>

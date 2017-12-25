@@ -3,15 +3,20 @@
  */
 import React, {Component} from 'react';
 import axios from 'axios';
+import _ from 'lodash';
 import '../../style/index.css';
 
 import {List} from '../../components';
+import {Customer as C} from '../../models';
 import Customer from './Customer';
+import CustomerDetails from './CustomerDetails';
 
 class Customers extends Component {
     state = {
         loading: true,
-        customers: []
+        shouldUpdate: true,
+        customers: [],
+        customerDetails: {}
     };
 
     componentWillMount() {
@@ -19,25 +24,62 @@ class Customers extends Component {
             .then((res) => {
                 this.setState({
                     loading: false,
-                    customers: res.data
+                    customers: res.data,
+                    shouldUpdate: false
                 })
             })
             .catch(() => {
                 this.setState({
                     loading: false,
-                    customers: []
+                    customers: [],
+                    shouldUpdate: false
                 })
             })
     }
 
+    componentWillUpdate(nextProps, nextState, nextContext) {
+        if (this.state.shouldUpdate) {
+            axios.get('http://localhost:4567/customers')
+                .then((res) => {
+                    this.setState({
+                        loading: false,
+                        products: res.data,
+                        shouldUpdate: false
+                    })
+                })
+                .catch(() => {
+                    this.setState({
+                        loading: false,
+                        products: [],
+                        shouldUpdate: false
+                    })
+                })
+        }
+    }
+
+    onItemClick = (id) => {
+        const {customers} = this.state;
+        console.log(_.find(customers, (customer) => C.id(customer) === id))
+
+        this.setState({
+            customerDetails: _.find(customers, (customer) => C.id(customer) === id)
+        })
+    };
+
     render() {
-        const {loading, customers} = this.state;
+        const {loading, customers, customerDetails} = this.state;
         console.log(customers)
 
         return (
-            <List ItemComponent={Customer}
-                  items={customers}
-                  loading={loading}/>
+            <div className="customer">
+                <div className="customer-options">
+                    <CustomerDetails customer={customerDetails}/>
+                </div>
+                <List ItemComponent={Customer}
+                      items={customers}
+                      onItemClick={this.onItemClick}
+                      loading={loading}/>
+            </div>
         );
     }
 }

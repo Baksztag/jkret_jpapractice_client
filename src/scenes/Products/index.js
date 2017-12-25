@@ -39,13 +39,15 @@ class Products extends Component {
             .then((res) => {
                 this.setState({
                     loading: false,
-                    products: res.data
+                    products: res.data,
+                    shouldUpdate: false
                 })
             })
             .catch(() => {
                 this.setState({
                     loading: false,
-                    products: []
+                    products: [],
+                    shouldUpdate: false
                 })
             })
     }

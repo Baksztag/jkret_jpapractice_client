@@ -34,9 +34,9 @@ class Products extends Component {
 
         return (
             loading ?
-                <div className="products-loading">Loading...</div>
+                <div className="list-loading">Loading...</div>
                 :
-                <div className="products">
+                <div className="list">
                     {products.map((product, index) => (
                         <Product key={index}
                                  product={product}/>

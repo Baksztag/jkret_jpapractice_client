@@ -4,49 +4,49 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-import Supplier from './Supplier';
+import Customer from './Customer';
 
-class Suppliers extends Component {
+class Customers extends Component {
     state = {
         loading: true,
-        suppliers: []
+        customers: []
     };
 
     componentWillMount() {
-        axios.get('http://localhost:4567/suppliers')
+        axios.get('http://localhost:4567/customers')
             .then((res) => {
                 this.setState({
                     loading: false,
-                    suppliers: res.data
+                    customers: res.data
                 })
             })
             .catch(() => {
                 this.setState({
                     loading: false,
-                    suppliers: []
+                    customers: []
                 })
             })
     }
 
     render() {
-        const {loading, suppliers} = this.state;
-        console.log(suppliers)
+        const {loading, customers} = this.state;
+        console.log(customers)
 
         return (
             loading ?
                 <div className="list-loading">Loading...</div>
                 :
                 <div className="list">
-                    {suppliers.map((supplier, index) => (
-                        <Supplier key={index}
-                                  supplier={supplier}/>
+                    {customers.map((customer, index) => (
+                        <Customer key={index}
+                                 customer={customer}/>
                     ))}
                 </div>
         );
     }
 }
 
-Suppliers.propTypes = {};
-Suppliers.defaultProps = {};
+Customers.propTypes = {};
+Customers.defaultProps = {};
 
-export default Suppliers;
+export default Customers;

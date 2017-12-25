@@ -1,16 +1,16 @@
 import React from 'react';
-import {Product as P} from '../../models'
+import {Transaction as T} from '../../models'
 
 /**
  * Created by jkret on 25/12/2017.
  */
-const Product = ({product}) => (
+const Transaction = ({transaction}) => (
     <div className="item">
         <div className="item-name">
-            {P.name(product)}
+            {T.name(transaction)}
         </div>
 
     </div>
 );
 
-export default Product;
+export default Transaction;

@@ -4,6 +4,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
+import {List} from '../../components';
 import Transaction from './Transaction';
 
 class Transactions extends Component {
@@ -33,15 +34,9 @@ class Transactions extends Component {
         console.log(transactions)
 
         return (
-            loading ?
-                <div className="list-loading">Loading...</div>
-                :
-                <div className="list">
-                    {transactions.map((transaction, index) => (
-                        <Transaction key={index}
-                                     transaction={transaction}/>
-                    ))}
-                </div>
+            <List ItemComponent={Transaction}
+                  items={transactions}
+                  loading={loading}/>
         );
     }
 }

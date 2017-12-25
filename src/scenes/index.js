@@ -2,6 +2,7 @@
  * Created by jkret on 25/12/2017.
  */
 import React, {Component} from 'react';
+import '../style/index.css';
 
 class AppLayout extends Component {
     render() {

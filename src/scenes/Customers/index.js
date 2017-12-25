@@ -3,7 +3,9 @@
  */
 import React, {Component} from 'react';
 import axios from 'axios';
+import '../../style/index.css';
 
+import {List} from '../../components';
 import Customer from './Customer';
 
 class Customers extends Component {
@@ -33,15 +35,9 @@ class Customers extends Component {
         console.log(customers)
 
         return (
-            loading ?
-                <div className="list-loading">Loading...</div>
-                :
-                <div className="list">
-                    {customers.map((customer, index) => (
-                        <Customer key={index}
-                                 customer={customer}/>
-                    ))}
-                </div>
+            <List ItemComponent={Customer}
+                  items={customers}
+                  loading={loading}/>
         );
     }
 }

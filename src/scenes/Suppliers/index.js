@@ -4,6 +4,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
+import {List} from '../../components';
 import Supplier from './Supplier';
 
 class Suppliers extends Component {
@@ -33,15 +34,9 @@ class Suppliers extends Component {
         console.log(suppliers)
 
         return (
-            loading ?
-                <div className="list-loading">Loading...</div>
-                :
-                <div className="list">
-                    {suppliers.map((supplier, index) => (
-                        <Supplier key={index}
-                                  supplier={supplier}/>
-                    ))}
-                </div>
+            <List ItemComponent={Supplier}
+                  items={suppliers}
+                  loading={loading}/>
         );
     }
 }

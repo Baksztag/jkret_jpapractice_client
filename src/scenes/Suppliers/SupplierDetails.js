@@ -6,7 +6,7 @@ import {Supplier as S} from '../../models';
 const SupplierDetails = ({supplier}) => (
     <div className="details">
         <div className="details-label">
-            Customer details
+            Supplier details
         </div>
         <div className="details-entry">
             Name: {S.name(supplier)}
@@ -21,7 +21,7 @@ const SupplierDetails = ({supplier}) => (
             Zip code: {S.zipCode(supplier)}
         </div>
         <div className="details-entry">
-            Discount: {S.bankAccountNumber(supplier)}
+            Bank account number: {S.bankAccountNumber(supplier)}
         </div>
     </div>
 );

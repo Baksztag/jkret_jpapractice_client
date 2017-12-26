@@ -89,3 +89,9 @@ body {
     flex-direction: row;
     justify-content: space-around;
 }
+
+.jpa-practice-client .transaction .transaction-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

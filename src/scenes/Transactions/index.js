@@ -9,6 +9,7 @@ import {List} from '../../components';
 import {Transaction as T} from '../../models';
 import Transaction from './Transaction';
 import TransactionNew from './TransactionNew';
+import TransactionDetails from './TransactionDetails';
 
 class Transactions extends Component {
     state = {
@@ -84,9 +85,10 @@ class Transactions extends Component {
         console.log(transactions)
 
         return (
-            <div className="transacion">
+            <div className="transaction">
                 <div className="transaction-options">
                     <TransactionNew addNewTransaction={this.addNewTransaction}/>
+                    <TransactionDetails transaction={transactionDetails}/>
                 </div>
                 <List ItemComponent={Transaction}
                       items={transactions}

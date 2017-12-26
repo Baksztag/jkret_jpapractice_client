@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-class CustomerNew extends Component {
+class SupplierNew extends Component {
     state = {
         companyName: '',
         street: '',
         city: '',
         zipCode: '',
-        discount: 0.0
+        bankAccountNumber: ''
     };
 
     updateStringField = (fieldName) => {
@@ -18,20 +18,14 @@ class CustomerNew extends Component {
         }
     };
 
-    updateDiscount = (e) => {
-        this.setState({
-            discount: e.target.value
-        })
-    };
-
     render() {
-        const {addNewCustomer} = this.props;
-        const {companyName, street, city, zipCode, discount} = this.state;
+        const {addNewSupplier} = this.props;
+        const {companyName, street, city, zipCode, bankAccountNumber} = this.state;
 
         return (
-            <div className="customer-new">
-                <div className="customer-new-label">
-                    Add new customer
+            <div className="supplier-new">
+                <div className="supplier-new-label">
+                    Add new supplier
                 </div>
                 <div className="new-item-input">
                     <div className="new-item-input-label">
@@ -67,21 +61,21 @@ class CustomerNew extends Component {
                 </div>
                 <div className="new-item-input">
                     <div className="new-item-input-label">
-                        Discount:
+                        Bank account number:
                     </div>
-                    <input type="number"
-                           value={discount}
-                           onChange={this.updateDiscount}/>
+                    <input type="text"
+                           value={bankAccountNumber}
+                           onChange={this.updateStringField('bankAccountNumber')}/>
                 </div>
-                <button onClick={() => addNewCustomer({...this.state})}>Submit</button>
+                <button onClick={() => addNewSupplier({...this.state})}>Submit</button>
             </div>
         );
     }
 }
 
-CustomerNew.propTypes = {
-    addNewCustomer: PropTypes.func.isRequired
+SupplierNew.propTypes = {
+    addNewSupplier: PropTypes.func.isRequired
 };
-CustomerNew.defaultProps = {};
+SupplierNew.defaultProps = {};
 
-export default CustomerNew;
+export default SupplierNew;

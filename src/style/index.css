@@ -78,3 +78,9 @@ body {
     flex-direction: row;
     justify-content: space-around;
 }
+
+.jpa-practice-client .supplier .supplier-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

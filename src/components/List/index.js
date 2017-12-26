@@ -5,6 +5,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
+import '../../style/list.css';
+
 class List extends Component {
     render() {
         const {loading, items, ItemComponent, onItemClick, activeItemId} = this.props;

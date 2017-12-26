@@ -1,5 +1,6 @@
 import React from 'react';
-import {Product as P} from '../../models'
+import {Product as P} from '../../models';
+import '../../style/list.css';
 
 /**
  * Created by jkret on 25/12/2017.

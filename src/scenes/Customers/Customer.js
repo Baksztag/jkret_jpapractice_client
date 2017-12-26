@@ -1,6 +1,6 @@
 import React from 'react';
 import {Customer as C} from '../../models'
-import '../../style/index.css';
+import '../../style/list.css';
 
 /**
  * Created by jkret on 25/12/2017.

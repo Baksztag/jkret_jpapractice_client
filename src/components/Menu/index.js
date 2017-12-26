@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import '../../style/menu.css';
 
 const Menu = () => (
     <div className="menu">

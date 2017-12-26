@@ -1,5 +1,6 @@
 import React from 'react';
 import {Transaction as T} from '../../models'
+import '../../style/list.css';
 
 /**
  * Created by jkret on 25/12/2017.

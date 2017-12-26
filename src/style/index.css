@@ -11,67 +11,6 @@ body {
   height: 100%;
 }
 
-.jpa-practice-client .menu {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 8px;
-  padding: 8px;
-  background-color: burlywood;
-}
-
-.jpa-practice-client .menu .menu-item {
-  margin: 0 8px;
-}
-
-.jpa-practice-client .menu .menu-item a {
-  color: black;
-  text-decoration: none;
-  border-bottom: 3px solid darkred;
-}
-
-.jpa-practice-client .menu .menu-item a:hover {
-  color: darkred;
-  cursor: pointer;
-}
-
-.jpa-practice-client .list {
-
-}
-
-.jpa-practice-client .list-loading {
-    text-align: center;
-    padding: 16px;
-}
-
-.jpa-practice-client .list-empty {
-    text-align: center;
-    padding: 16px;
-}
-
-.jpa-practice-client .list .item {
-  margin: 8px 0;
-  padding: 8px;
-  background-color: burlywood;
-  border-radius: 4px;
-}
-
-.jpa-practice-client .list .item-active {
-  margin: 8px 0;
-  padding: 8px;
-  border-radius: 4px;
-  background-color: darkred;
-  color: burlywood;
-}
-
-.jpa-practice-client .list .item:hover {
-  color: darkred;
-  cursor: pointer;
-}
-
-.jpa-practice-client .list .item .item-name {
-
-}
-
 .jpa-practice-client .product .product-options {
   display: flex;
   flex-direction: row;

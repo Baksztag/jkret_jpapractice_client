@@ -1,0 +1,22 @@
+.jpa-practice-client .menu {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: burlywood;
+}
+
+.jpa-practice-client .menu .menu-item {
+    margin: 0 8px;
+}
+
+.jpa-practice-client .menu .menu-item a {
+    color: black;
+    text-decoration: none;
+    border-bottom: 3px solid darkred;
+}
+
+.jpa-practice-client .menu .menu-item a:hover {
+    color: darkred;
+    cursor: pointer;
+}

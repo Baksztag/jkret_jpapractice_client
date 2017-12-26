@@ -1,5 +1,6 @@
 import React from 'react';
 import {Supplier as S} from '../../models'
+import '../../style/list.css';
 
 /**
  * Created by jkret on 25/12/2017.

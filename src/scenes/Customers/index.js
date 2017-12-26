@@ -10,6 +10,7 @@ import {List} from '../../components';
 import {Customer as C} from '../../models';
 import Customer from './Customer';
 import CustomerDetails from './CustomerDetails';
+import CustomerNew from './CustomerNew';
 
 class Customers extends Component {
     state = {
@@ -17,6 +18,20 @@ class Customers extends Component {
         shouldUpdate: true,
         customers: [],
         customerDetails: {}
+    };
+
+    addNewCustomer = (customer) => {
+        this.setState({
+            shouldUpdate: true
+        }, () => {
+            axios.post('http://localhost:4567/api/customer', customer)
+                .then(() => this.setState({
+                    shouldUpdate: false
+                }))
+                .catch(() => this.setState({
+                    shouldUpdate: false
+                }))
+        })
     };
 
     componentWillMount() {
@@ -43,14 +58,14 @@ class Customers extends Component {
                 .then((res) => {
                     this.setState({
                         loading: false,
-                        products: res.data,
+                        customers: res.data,
                         shouldUpdate: false
                     })
                 })
                 .catch(() => {
                     this.setState({
                         loading: false,
-                        products: [],
+                        customers: [],
                         shouldUpdate: false
                     })
                 })
@@ -73,6 +88,7 @@ class Customers extends Component {
         return (
             <div className="customer">
                 <div className="customer-options">
+                    <CustomerNew addNewCustomer={this.addNewCustomer}/>
                     <CustomerDetails customer={customerDetails}/>
                 </div>
                 <List ItemComponent={Customer}

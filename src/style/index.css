@@ -38,6 +38,11 @@ body {
 
 }
 
+.jpa-practice-client .list-empty {
+    text-align: center;
+    padding: 16px;
+}
+
 .jpa-practice-client .list .item {
   margin: 8px 0;
   padding: 8px;
@@ -66,4 +71,10 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.jpa-practice-client .customer .customer-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }

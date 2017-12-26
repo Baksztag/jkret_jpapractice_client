@@ -3,6 +3,7 @@
  */
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 
 class List extends Component {
     render() {
@@ -13,14 +14,19 @@ class List extends Component {
             loading ?
                 <div className="list-loading">Loading...</div>
                 :
-                <div className="list">
-                    {items.map((item, index) => (
-                        <ItemComponent key={index}
-                                       onItemClick={onItemClick}
-                                       activeItemId={activeItemId}
-                                       item={item}/>
-                    ))}
-                </div>
+                _.isEmpty(items) ?
+                    <div className="list-empty">
+                        No items to display
+                    </div>
+                    :
+                    <div className="list">
+                        {items.map((item, index) => (
+                            <ItemComponent key={index}
+                                           onItemClick={onItemClick}
+                                           activeItemId={activeItemId}
+                                           item={item}/>
+                        ))}
+                    </div>
         );
     }
 }

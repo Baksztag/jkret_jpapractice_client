@@ -31,7 +31,6 @@ class Products extends Component {
                     shouldUpdate: false
                 }))
         })
-
     };
 
     componentWillMount() {
